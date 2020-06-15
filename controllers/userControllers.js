@@ -1,8 +1,9 @@
-const bcrypt = require('bcrypjs');
+const bcrypt = require('bcryptjs');
+const User = require('../models/User');
 
 module.exports = {
   getAllUsers: (req, res) => {
-    User.find
+    User.find()
       .then((users) => {
         return res.status(200).json(users);
       })
